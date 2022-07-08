@@ -1,0 +1,57 @@
+<?php
+
+namespace BackendBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Usuario
+ *
+ * @ORM\Table(name="usuario", uniqueConstraints={@ORM\UniqueConstraint(name="uq_nombreUsuario", columns={"nombreUsuario"})}, indexes={@ORM\Index(name="fk_persona", columns={"idPersona"})})
+ * @ORM\Entity
+ */
+class Usuario
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idUsuario", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idusuario;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombreUsuario", type="string", length=45, nullable=false)
+     */
+    private $nombreusuario;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contrasena", type="string", length=20, nullable=false)
+     */
+    private $contrasena;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rol", type="string", length=20, nullable=false)
+     */
+    private $rol;
+
+    /**
+     * @var \Persona
+     *
+     * @ORM\ManyToOne(targetEntity="Persona")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idPersona", referencedColumnName="idPersona")
+     * })
+     */
+    private $idpersona;
+
+
+}
+

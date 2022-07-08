@@ -1,0 +1,61 @@
+<?php
+
+namespace BackendBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Equipos
+ *
+ * @ORM\Table(name="equipos", uniqueConstraints={@ORM\UniqueConstraint(name="uq_numControl", columns={"numeroControl"})})
+ * @ORM\Entity
+ */
+class Equipos
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idEquipos", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idequipos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombreEquipo", type="string", length=100, nullable=false)
+     */
+    private $nombreequipo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="text", length=65535, nullable=false)
+     */
+    private $descripcion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numeroControl", type="string", length=15, nullable=false)
+     */
+    private $numerocontrol;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="estadoEquipo", type="integer", nullable=false)
+     */
+    private $estadoequipo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipoEquipo", type="string", length=50, nullable=false)
+     */
+    private $tipoequipo;
+
+
+}
+

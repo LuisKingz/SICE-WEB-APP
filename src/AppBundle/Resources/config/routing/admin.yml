@@ -1,0 +1,96 @@
+## YAML Template.
+---
+############ RUTAS PERSONAS ####################
+app_usuario:
+    path: /usuario
+    defaults: { _controller: AppBundle:Usuario:user }
+    
+app_usuario_registro:
+    path: /registrar/
+    defaults: { _controller: AppBundle:Usuario:addUser }
+    
+app_usuario_modificar:
+    path: /usuario/modificar/{id}
+    defaults: { _controller: AppBundle:Usuario:updateUser }
+
+app_usuario_eliminar:
+    path: /usuario/eliminar/{id}
+    defaults: { _controller: AppBundle:Usuario:deleteUser }
+    
+app_usuario_detalle:
+    path: /usuario/detalle/{id}
+    defaults: { _controller: AppBundle:Usuario:detailUser }
+    
+############ RUTAS EQUIPOS ####################
+app_equipos:
+    path: /equipos
+    defaults: { _controller: AppBundle:Equipo:equipo }
+
+app_equipo_registro:
+    path: /equipos/registrar
+    defaults: { _controller: AppBundle:Equipo:equipoRegistro }
+    
+app_equipo_modificar:
+    path: /equipos/modificar/{id}
+    defaults: { _controller: AppBundle:Equipo:equipoModificar }
+
+app_equipo_eliminar:
+    path: /equipos/eliminar/{id}
+    defaults: { _controller: AppBundle:Equipo:equipoEliminar }
+    
+ ################# PRESTAMO DE EQUIPOS #####################
+ 
+app_prestamos:
+    path: /prestamos
+    defaults: { _controller: AppBundle:PrestamoEquipo:prestamo }
+    
+app_prestamo_eliminar:
+    path: /prestamos/eliminar/{id}
+    defaults: { _controller: AppBundle:PrestamoEquipo:prestamoEliminar }
+    
+app_prestamo_registrar:
+    path: /prestamos/registrar
+    defaults: { _controller: AppBundle:PrestamoEquipo:prestamoForm }
+    
+app_prestamo_registrar_prestamo:
+    path: /prestamos/registrar/prestamo
+    defaults: { _controller: AppBundle:PrestamoEquipo:prestamoRegistro }
+
+app_prestamo_entrega:
+    path: /prestamos/entrega/{idprestamo}
+    defaults: { _controller: AppBundle:PrestamoEquipo:prestamoEntregado }
+    
+app_grafica:
+    path: /prestamos/estadisticasGenerales
+    defaults: { _controller: AppBundle:PrestamoEquipo:chart }
+    
+app_graficaUsuario:
+    path: /prestamos/estadisticaUsuario/{id}
+    defaults: { _controller: AppBundle:PrestamoEquipo:chartAlumno }
+
+app_pdfGeneral:
+    path: /prestamos/pdfGeneral
+    defaults: { _controller: AppBundle:PrestamoEquipo:pdf }
+    
+app_pdfUsuario:
+    path: /prestamos/pdfUsuario
+    defaults: { _controller: AppBundle:PrestamoEquipo:pdfUsuario }
+ 
+################### RUTAS DE PRUEBA ########################
+validation:
+    path: /validation
+    defaults: { _controller: AppBundle:Usuario:validation }
+    
+validation_user:
+    path: /validationUser
+    defaults: { _controller: AppBundle:Usuario:validationUser }
+    
+################### RUTAS PERSONAS ########################
+
+app_persona_admin:
+    path: /registro/persona
+    defaults: { _controller: AppBundle:Usuario:addUserAdmin }
+
+app_persona_admin_u:
+    path: /modificar/persona/{id}
+    defaults: { _controller: AppBundle:Usuario:updateUserAdmin }

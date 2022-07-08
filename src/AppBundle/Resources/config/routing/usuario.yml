@@ -1,0 +1,35 @@
+## YAML Template.
+---
+############ RUTAS EQUIPOS ####################
+app_equipos:
+    path: /equipos
+    defaults: { _controller: AppBundle:Equipo:equipo }
+
+app_equipo_registro:
+    path: /equipos/registrar
+    defaults: { _controller: AppBundle:Equipo:equipoRegistro }
+    
+app_equipo_modificar:
+    path: /equipos/modificar/{id}
+    defaults: { _controller: AppBundle:Equipo:equipoModificar }
+
+app_equipo_eliminar:
+    path: /equipos/eliminar/{id}
+    defaults: { _controller: AppBundle:Equipo:equipoEliminar }
+
+ ################# PRESTAMO DE EQUIPOS #####################
+app_prestamos:
+    path: /prestamos
+    defaults: { _controller: AppBundle:PrestamoEquipo:prestamo }
+    
+app_prestamo_eliminar:
+    path: /prestamos/eliminar/{id}
+    defaults: { _controller: AppBundle:PrestamoEquipo:prestamoEliminar }
+    
+app_prestamo_registrar:
+    path: /prestamos/registrar
+    defaults: { _controller: AppBundle:PrestamoEquipo:prestamoForm }
+    
+app_prestamo_registrar_prestamo:
+    path: /prestamos/registrar/prestamo
+    defaults: { _controller: AppBundle:PrestamoEquipo:prestamoRegistro }

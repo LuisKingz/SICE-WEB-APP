@@ -1,0 +1,19 @@
+## YAML Template.
+---
+app_login:
+    path: /
+    defaults: { _controller: AppBundle:Default:index }
+
+YML_Auth:
+    resource: "@AppBundle/Resources/config/routing/auth.yml"
+    prefix: /
+
+YML_Admin:
+    resource: "@AppBundle/Resources/config/routing/admin.yml"
+    prefix: /admin
+
+#YML_Usuario:
+#    resource: "@AppBundle/Resources/config/routing/usuario.yml"
+#    prefix: /usuario
+#    
+ 

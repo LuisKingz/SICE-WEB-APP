@@ -1,0 +1,70 @@
+<?php
+
+namespace BackendBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PrestamosEquipo
+ *
+ * @ORM\Table(name="prestamos_equipo", indexes={@ORM\Index(name="fk_equipo", columns={"idEquipo"}), @ORM\Index(name="fk_prestador", columns={"idPrestador"}), @ORM\Index(name="fk_solicitante", columns={"idSolicitante"})})
+ * @ORM\Entity
+ */
+class PrestamosEquipo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idPrestamo", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idprestamo;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fechaPrestamo", type="datetime", nullable=false)
+     */
+    private $fechaprestamo;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fechaEntrega", type="datetime", nullable=true)
+     */
+    private $fechaentrega;
+
+    /**
+     * @var \Equipos
+     *
+     * @ORM\ManyToOne(targetEntity="Equipos")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idEquipo", referencedColumnName="idEquipos")
+     * })
+     */
+    private $idequipo;
+
+    /**
+     * @var \Usuario
+     *
+     * @ORM\ManyToOne(targetEntity="Usuario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idPrestador", referencedColumnName="idUsuario")
+     * })
+     */
+    private $idprestador;
+
+    /**
+     * @var \Persona
+     *
+     * @ORM\ManyToOne(targetEntity="Persona")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idSolicitante", referencedColumnName="idPersona")
+     * })
+     */
+    private $idsolicitante;
+
+
+}
+
